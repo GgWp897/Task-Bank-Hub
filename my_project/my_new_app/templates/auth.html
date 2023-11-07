@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизация</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/auth.css">
+  <title>Авторизация</title>
 </head>
-<body>
 
-    <h1>Авторизация</h1>
+<body class="wrapper">
 
-    <form method="post" action="">
-        {% csrf_token %}
-        <input type="text" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Пароль">
-        <button type="submit">Войти</button>
+<div class="logo">
+  TBH
+</div>
+
+<div class="menuBlock">
+  <div class="menu">
+    <h1 class="title">Авторизация</h1>
+
+    <form class="form" method="post" action="">
+      {% csrf_token %}
+      <input class="input" type="text" name="email" placeholder="Email">
+      <input class="input" type="password" name="password" placeholder="Пароль">
+      <button class="button" type="submit">Войти</button>
     </form>
 
-<br>
-<br>
-
-    <form action="{% url 'registration' %}">
-        {% csrf_token %}
-        <button type="submit">Страница регистрации</button>
+    <form class="form" action="{% url 'registration' %}">
+      {% csrf_token %}
+      <button class="button" type="submit">Регистрация</button>
     </form>
 
-<br>
-<br>
-    <form method="post" action="{% url 'admin' %}">
-        {% csrf_token %}
-        <button type="submit">Войти в админ панель</button>
+    <form class="form" method="post" action="{% url 'admin' %}">
+      {% csrf_token %}
+      <button class="button admin" type="submit">Админ-панель</button>
     </form>
-    
+  </div>
+</div>
+
+
 </body>
 </html>
