@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Users, Statement
 from django.contrib.auth import logout
 
+def welcome(reqest):
+    return render(requst, 'welcome.html')
+
 def auth(requst):
     if requst.method=='POST':
         email=requst.POST['email']
