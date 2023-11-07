@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дом</title>
+</head>
+<header style="background-color: rgb(63, 63, 63); height: 75px; width: 100%; margin-top: -1.4%;">
+
+    <div style="padding-top: 0%; margin-left: 3%; width: 100%; display: flex; align-items: center; justify-content: space-between;">
+
+        <div>
+            <p style="font-size: 25px;">Задачи№1</p>
+        </div>
+    
+        <div>
+            <form method="post" action="{% url 'logoutxz' %}" style="margin-left: -150%;">
+                {% csrf_token %}
+                <button type="submit" style="height: 35px; font-size: 30px;margin-top: 2%; border: 1px solid yellow; background-color: yellow; border-radius: 10px;">Выйти</button>
+            </form>
+        </div>
+    
+    </div>
+    
+    
+    
+</header>
+
+<body style="background-color: rgb(107, 107, 107);">
+    
+    <h1>Задачи№2</h1>
+
+    {% for el in task %}    
+    <div class="alert alert-warning" style="float: left; width: 25%; text-align: center; margin: 20px; border-radius: 15px; border: 2px solid rgb(152, 160, 0); background-color: rgb(152, 160, 0);">
+    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.task}}</h1>
+    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.taskAll}}</p>
+    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.date}}</p>
+</div>
+    {% endfor %}
+
+
+</body>
+</html>
