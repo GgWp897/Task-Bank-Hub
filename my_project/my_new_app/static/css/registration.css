@@ -96,14 +96,6 @@
   color: #1c1c1c;
 }
 
-.admin {
-  position: absolute;
-  right: 50px;
-  top: 0;
-  background: lightskyblue;
-  color: #000;
-}
-
 .subtitle {
   display: flex;
   align-items: center;
@@ -183,7 +175,7 @@
 
 @media (max-width: 480px) {
   .menu {
-    height: 700px;
+    height: 600px;
   }
 
   .button {

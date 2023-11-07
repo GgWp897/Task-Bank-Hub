@@ -26,7 +26,7 @@
 
     <form class="form" action="{% url 'registration' %}">
       {% csrf_token %}
-      <button class="button" type="submit">Регистрация</button>
+      <p class="subtitle">Нет аккаунта? <button class="link" type="submit">Регистрация</button></p>
     </form>
 
     <form class="form" method="post" action="{% url 'admin' %}">
