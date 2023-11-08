@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../static/img/favicon.png"/>
   <link rel="stylesheet" href="../static/css/registration.css">
   <title>Регистрация</title>
 </head>
@@ -25,7 +26,13 @@
 
     <form class="form" action="{% url 'auth' %}">
       {% csrf_token %}
-      <p class="subtitle">Есть аккант? <button class="link" type="submit">Войти</button></p>
+      <p class="subtitle">Есть аккант?
+        <button class="link" type="submit">Войти</button>
+      </p>
+    </form>
+
+    <form action="{% url 'admin' %}">
+      <button class="button admin" type="submit">Админ-панель</button>
     </form>
   </div>
 </div>

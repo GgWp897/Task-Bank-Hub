@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Users, Statement
 from django.contrib.auth import logout
 
-def welcome(reqest):
+def welcome(requst):
     return render(requst, 'welcome.html')
 
 def auth(requst):
