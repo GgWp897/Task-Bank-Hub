@@ -50,6 +50,3 @@ def admin(requst):
 def logoutxz(requst):
     logout(requst)
     return redirect('auth')
-
-
-    
