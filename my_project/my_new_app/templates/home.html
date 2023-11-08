@@ -41,7 +41,7 @@
         <p>{{ el.date }}</p>
         <form method="post">
           {% csrf_token %}
-          <button type="submit" name="delete_task" value="{{ el.id }}">Выполнить</button>
+          <button class="do" type="submit" name="delete_task" value="{{ el.id }}">Выполнить</button>
         </form>
         
       </div>
