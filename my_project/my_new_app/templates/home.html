@@ -3,45 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/home.css">
   <link rel="icon" type="image/svg+xml" href="../static/img/favicon.png"/>
   <title>Главная</title>
 </head>
-<header style="background-color: rgb(63, 63, 63); height: 75px; width: 100%; margin-top: -1.4%;">
+<body class="wrapper">
 
-  <div
-    style="padding-top: 0%; margin-left: 3%; width: 100%; display: flex; align-items: center; justify-content: space-between;">
+<header class="header">
 
-    <div>
-      <p style="font-size: 25px;">Задачи№1</p>
-    </div>
-
-    <div>
-      <form method="post" action="{% url 'logoutxz' %}" style="margin-left: -150%;">
-        {% csrf_token %}
-        <button type="submit"
-                style="height: 35px; font-size: 30px;margin-top: 2%; border: 1px solid yellow; background-color: yellow; border-radius: 10px;">
-          Выйти
-        </button>
-      </form>
-    </div>
-
+  <div class="logo">
+    TBH
   </div>
 
+  <div>
+    <form method="post" action="{% url 'logoutxz' %}">
+      {% csrf_token %}
+      <p class="subtitle">
+        <button type="submit" class="link"
+        >
+          Выйти
+        </button>
+      </p>
+
+    </form>
+  </div>
 
 </header>
 
-<body style="background-color: rgb(107, 107, 107);">
+<div class="menuBlock">
+  <div class="menu">
+    <h1 class="title">Задачи</h1>
 
-<h1>Задачи№2</h1>
-
-{% for el in task %}
-  <div class="alert alert-warning"
-       style="float: left; width: 25%; text-align: center; margin: 20px; border-radius: 15px; border: 2px solid rgb(152, 160, 0); background-color: rgb(152, 160, 0);">
-    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ el.task }}</h1>
-    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ el.taskAll }}</p>
-    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ el.date }}</p>
+    {% for el in task %}
+      <div>
+        <h1>{{ el.task }}</h1>
+        <p>{{ el.taskAll }}</p>
+        <p>{{ el.date }}</p>
+      </div>
+    {% endfor %}
   </div>
-{% endfor %}
+</div>
 
 
 </body>
