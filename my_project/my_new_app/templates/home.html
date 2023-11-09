@@ -39,6 +39,8 @@
         <h1>{{ el.task }}</h1>
         <p>{{ el.taskAll }}</p>
         <p>{{ el.date }}</p>
+        <p style='color:white;'>{{ el.address }}</p>
+        <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/35/krasnodar/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/35/krasnodar/?ll=38.998420%2C45.043901&utm_medium=mapframe&utm_source=maps&z=11.92" style="color:#eee;font-size:12px;position:absolute;top:14px;"></a><iframe src="https://yandex.ru/map-widget/v1/?ll=38.998420%2C45.043901&z=11.92" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
         <form method="post">
           {% csrf_token %}
           <button class="do" type="submit" name="delete_task" value="{{ el.id }}">Выполнить</button>
