@@ -19,6 +19,11 @@
   margin-bottom: 10vh;
 }
 
+.logo2 {
+  padding: 48px;
+  margin-bottom: 10vh;
+}
+
 .menuBlock {
   display: flex;
   align-items: center;
