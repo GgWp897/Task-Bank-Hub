@@ -11,10 +11,11 @@
 
 <header class="header">
 
- <div style="display: flex; flex-direction: row">
+ <div class="logo_header">
     <div class="logo">
         TBH
     </div>
+
     <img class="logo2" src="../static/img/logo2.png" alt="logo sovkombank" width="250px" height="30px">
 </div>
 
@@ -48,7 +49,6 @@
           {% csrf_token %}
           <button class="do" type="submit" name="delete_task" value="{{ el.id }}">Выполнить</button>
         </form>
-        
       </div>
     {% endfor %}
   </div>

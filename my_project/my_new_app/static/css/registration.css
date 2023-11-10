@@ -133,6 +133,11 @@
   min-width: 150px;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 992px) {
   .menu {
     height: 600px;
@@ -153,6 +158,10 @@
 
   .subtitle, .subtitle button {
     font-size: 18px;
+  }
+
+  .header {
+    flex-direction: column;
   }
 }
 
