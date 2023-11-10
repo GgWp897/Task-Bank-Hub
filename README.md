@@ -7,12 +7,14 @@
 
 🪙 Страница регистрации 
 
-![image](https://github.com/GgWp897/projectBank/assets/107105044/bbbe0a12-dc6c-44c5-92ce-f0e78b439cd0)
+![image](https://github.com/GgWp897/projectBank/assets/107105044/1f0b8521-366b-404d-a133-940d627aaab0)
+
 
 
 🪙 Страница авторизации
 
-![image](https://github.com/GgWp897/projectBank/assets/107105044/eb81c932-fb28-44ef-81b8-55b0e0cca277)
+![image](https://github.com/GgWp897/projectBank/assets/107105044/df2f3c5f-e054-4f5a-bf9d-e41e89c575c4)
+
 
 
 🪙 Административная панель 
