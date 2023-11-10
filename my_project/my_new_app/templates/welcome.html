@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../static/img/favicon.png"/>
+  <link rel="stylesheet" href="../static/css/welcome.css">
+  <title>Добро пожаловать</title>
+</head>
+<body class="wrapper">
+
+<div class="header">
+    <div class="logo">
+        TBH
+    </div>
+    <img class="logo2" src="../static/img/logo2.png" alt="logo sovkombank" width="250px" height="30px">
+</div>
+
+<div class="menuBlock">
+  <div class="menu">
+    <h1 class="title">Добро пожаловать</h1>
+
+    <form action="{% url 'auth' %}">
+      <button class="button" type="submit">Войти</button>
+    </form>
+
+    <form action="{% url 'admin' %}">
+      <button class="button admin" type="submit">Админ-панель</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

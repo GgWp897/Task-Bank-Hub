@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дом</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/home.css">
+  <link rel="icon" type="image/svg+xml" href="../static/img/favicon.png"/>
+  <title>Главная</title>
 </head>
-<header style="background-color: rgb(63, 63, 63); height: 75px; width: 100%; margin-top: -1.4%;">
+<body class="wrapper">
 
-    <div style="padding-top: 0%; margin-left: 3%; width: 100%; display: flex; align-items: center; justify-content: space-between;">
+<header class="header">
 
-        <div>
-            <p style="font-size: 25px;">Задачи№1</p>
-        </div>
-    
-        <div>
-            <form method="post" action="{% url 'logoutxz' %}" style="margin-left: -150%;">
-                {% csrf_token %}
-                <button type="submit" style="height: 35px; font-size: 30px;margin-top: 2%; border: 1px solid yellow; background-color: yellow; border-radius: 10px;">Выйти</button>
-            </form>
-        </div>
-    
+ <div class="logo_header">
+    <div class="logo">
+        TBH
     </div>
-    
-    
-    
+
+    <img class="logo2" src="../static/img/logo2.png" alt="logo sovkombank" width="250px" height="30px">
+</div>
+
+  <div>
+    <form method="post" action="{% url 'logoutxz' %}">
+      {% csrf_token %}
+      <p class="subtitle">
+        <button type="submit" class="link"
+        >
+          Выйти
+        </button>
+      </p>
+
+    </form>
+  </div>
+
 </header>
 
-<body style="background-color: rgb(107, 107, 107);">
-    
-    <h1>Задачи№2</h1>
+<div class="menuBlock">
+  <div class="menu">
+    <h1 class="title">Задачи</h1>
 
-    {% for el in task %}    
-    <div class="alert alert-warning" style="float: left; width: 25%; text-align: center; margin: 20px; border-radius: 15px; border: 2px solid rgb(152, 160, 0); background-color: rgb(152, 160, 0);">
-    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.task}}</h1>
-    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.taskAll}}</p>
-    <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{el.date}}</p>
-</div>
+    {% for el in task %}
+      <div>
+        <h1>{{ el.task }}</h1>
+        <p>{{ el.taskAll }}</p>
+        <p>{{ el.date }}</p>
+        <p style='color:white;'>{{ el.address }}</p>
+        <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/35/krasnodar/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;"></a><a href="https://yandex.ru/maps/35/krasnodar/?ll=38.998420%2C45.043901&utm_medium=mapframe&utm_source=maps&z=11.92" style="color:#eee;font-size:12px;position:absolute;top:14px;"></a><iframe src="https://yandex.ru/map-widget/v1/?ll=38.998420%2C45.043901&z=11.92" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        <form method="post">
+          {% csrf_token %}
+          <button class="do" type="submit" name="delete_task" value="{{ el.id }}">Выполнить</button>
+        </form>
+      </div>
     {% endfor %}
+  </div>
+</div>
 
 
 </body>

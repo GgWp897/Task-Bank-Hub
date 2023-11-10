@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Users, Statement
 from django.contrib.auth import logout
 
+def welcome(requst):
+    return render(requst, 'welcome.html')
+
 def auth(requst):
     if requst.method=='POST':
         email=requst.POST['email']
@@ -28,18 +31,16 @@ def registration(requst):
             return redirect('registration')
     return render(requst, 'registration.html')
 
-def home(requst):
-    if 'user_id' in requst.session:
-        user_id = requst.session.get('user_id')
-        task = Statement.objects.filter(user_id=user_id)  
-        if requst.method == 'POST':
-            task = requst.POST['task']
-            taskAll = requst.POST['taskAll']
-            date = requst.POST['date']
-            statement = Statement(task=task, taskAll=taskAll, date=date, user_id=user_id)
-            statement.save()
-        
-        return render(requst, 'home.html', {'task': task})
+def home(request):
+    if 'user_id' in request.session:
+        user_id = request.session.get('user_id')
+        task = Statement.objects.filter(user_id=user_id)
+
+        if request.method == 'POST':
+            if 'delete_task' in request.POST:
+                task_id = request.POST['delete_task']
+                Statement.objects.filter(id=task_id).delete()
+        return render(request, 'home.html', {'task': task})
     else:
         return redirect('auth')
     
@@ -49,6 +50,3 @@ def admin(requst):
 def logoutxz(requst):
     logout(requst)
     return redirect('auth')
-
-
-    
