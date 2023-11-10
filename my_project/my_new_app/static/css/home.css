@@ -25,6 +25,11 @@
     padding: 30px;
 }
 
+.logo2 {
+  padding: 48px;
+  margin-bottom: 10vh;
+}
+
 .subtitle {
     display: flex;
     align-items: center;

@@ -18,6 +18,11 @@
   margin-bottom: 10vh;
 }
 
+.logo2 {
+  padding: 48px;
+  margin-bottom: 10vh;
+}
+
 .menuBlock {
   display: flex;
   flex-direction: column;
