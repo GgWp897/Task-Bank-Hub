@@ -29,9 +29,7 @@
 
     <form class="form" action="{% url 'auth' %}">
       {% csrf_token %}
-      <p class="subtitle">Есть аккант?
-        <button class="link" type="submit">Войти</button>
-      </p>
+       <p style="color: gray">Уже имеется аккаунт? <a style="color: white; text-decoration: none" href="{% url 'auth' %}">Войдите</a></p>
     </form>
 
     <form action="{% url 'admin' %}">
