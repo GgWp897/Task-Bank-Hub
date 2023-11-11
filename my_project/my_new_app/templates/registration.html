@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../static/img/favicon.png"/>
   <link rel="stylesheet" href="../static/css/registration.css">
-  <title>Регистрация</title>
+  <title>Страница регистрации</title>
 </head>
 <body class="wrapper">
 
@@ -29,9 +29,7 @@
 
     <form class="form" action="{% url 'auth' %}">
       {% csrf_token %}
-      <p class="subtitle">Есть аккант?
-        <button class="link" type="submit">Войти</button>
-      </p>
+       <p style="color: gray">Уже имеется аккаунт? <a style="color: white; text-decoration: none" href="{% url 'auth' %}">Войдите</a></p>
     </form>
 
     <form action="{% url 'admin' %}">

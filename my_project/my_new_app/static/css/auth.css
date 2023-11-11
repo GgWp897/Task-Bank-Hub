@@ -129,8 +129,8 @@
     padding: 10px;
 }
 
-.link {
-    min-width: 150px;
+#btn-reg {
+    background-color: #1c1c1c !important;
 }
 
 .header {
